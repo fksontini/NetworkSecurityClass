@@ -1,5 +1,5 @@
 ###### MISE A JOUR:
-- 24/05/2015: 
+- 24/05/2015: Support de cours de la 4C-INFO1 créer
 
 ###### DESCRIPTION:
 Ce dépôt contient les diapositives, les manuels de Travaux pratiques du cours 'Sécurité des Réseaux'.

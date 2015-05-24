@@ -1,4 +1,5 @@
-### ESPRIT: 4CINFO1 - Mai-Juin 2015
+### Mise à jour
+- 24/05/2015: 
 
 ###### DESCRIPTION:
 Ce dépôt contient les diapositives, les manuels de Travaux pratiques du cours 'Sécurité des Réseaux'.

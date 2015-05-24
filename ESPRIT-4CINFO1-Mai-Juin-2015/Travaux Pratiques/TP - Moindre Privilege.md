@@ -4,7 +4,7 @@
 Teser le concept du moindre privilège.
 
 > ###### AUTEUR:
-> **Abdessabour Arous**.
+> > **Abdessabour Arous**.
 
 
 > ###### NOTICE RELATIVE AU DROIT D'AUTEUR:

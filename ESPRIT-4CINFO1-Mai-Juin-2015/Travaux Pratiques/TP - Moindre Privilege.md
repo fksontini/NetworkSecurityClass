@@ -1,9 +1,7 @@
-### Travaux Pratique - Collecte D'information
+### Travaux Pratique - Moindre Privilège
 
 ###### DESCRIPTION:
-Première phase d'un test d'intrusion:
-Utilisation de système de scan passif pour collecter des informations sur la cible du test d'intrusion
-
+Teser le concept du moindre privilège.
 
 ###### AUTEUR:
 **Abdessabour Arous**.
@@ -17,37 +15,10 @@ Utilisation de système de scan passif pour collecter des informations sur la ci
 
 
 ##### OUTILS
-- NSLOOKUP
-- DIG
-- HOST
-- WHOIS
-- THE HARVESTER
-- MALTEGO
+- GCC
+- Sql Server
+- DVWA
+- Metasploit
 
 ##### INSTRUCTIONS
-1. NSLOOKUP:
-
-    ```
-    $ nslookup <NOM_DU_HOST>
-    $ nslookup -debug <NOM_DU_HOST>
-    $ nslookup -d2 <NOM_DU_HOST>
-    ```
-
-2. DIG:
-
-    ```
-    $ dig <NOM_DU_DOMAIN>
-    $ dig +short <NOM_DU_DOMAIN>
-    ```
-
-3. HOST:
-
-    ```
-    $ host <NOM_DU_HOST>
-    $ host -d <NOM_DU_HOST>
-    ```
-
-4. Interrogez les sites web suivant:
-
-    >* http://whois.ati.tn
-    >* https://gwhois.org/
+1. 

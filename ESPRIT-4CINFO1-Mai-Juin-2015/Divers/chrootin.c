@@ -22,14 +22,12 @@ int main(void)
 	getcwd(buf, 1024);
 	printf("Repertoire current: %s\n", buf);
 	
-	// Le repertoire "/" va devenir dès maintenant le repertoire current
-	getcwd(buf, 1024);
-	printf("Repertoire current: %s\n", buf);
-	// Le fichier "/temoins" doit exister!
+	// Le fichier "/temoins" n'existe pas dans notre système.
+	struct stat statBuf;
 	if(stat("/temoins", &statBuf) == -1)
 		perror("stat(/temoins)");
 	else
-		printf("trouvé /temoins\n");
+		printf("/temoins");
 	
 	if(chroot(buf) == -1) // chrooter? /
 	{

@@ -40,6 +40,4 @@ int main(void)
 	// Lister les fichiers du repertoire current
 	printf("Liste des fichiers dans le repertoire current:\n");
 	execlp("ls", "/", NULL);
-
-}
 }

@@ -35,12 +35,13 @@ int main(void)
 		printf("Etes vous root?\n");
 		exit(EXIT_FAILURE);
 	}
-	
-	// Reverifier
+
+	// Le repertoire "/" va devenir dès maintenant le repertoire current
 	getcwd(buf, 1024);
 	printf("Repertoire current: %s\n", buf);
-	
-	// Lister les fichiers du repertoire current
-	printf("Liste des fichiers dans le repertoire current:\n");
-	execlp("ls", "/", NULL);
+	// Le fichier "/temoins" doit exister!
+	if(stat("/temoins", &statBuf) == -1)
+		perror("stat(/temoins)");
+	else
+		printf("trouvé /temoins\n");
 }

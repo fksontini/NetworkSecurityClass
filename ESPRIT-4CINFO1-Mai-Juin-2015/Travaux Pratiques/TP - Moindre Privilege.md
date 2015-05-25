@@ -16,9 +16,28 @@ Teser le concept du moindre privilège.
 
 ##### OUTILS
 - GCC
+- ProRAT
+- Software Restriction Policy
+- Registre de Windows
 - Sql Server
 - DVWA
 - Metasploit
 
 ##### INSTRUCTIONS
-1. 
+1. CHROOT
+	
+	* test du chroot
+	````
+	$ wget https://github.com/AbMaster/NetworkSecurityClass/raw/master/ESPRIT-4CINFO1-Mai-Juin-2015/Divers/chrootin.c
+	$ gcc -o chrootin chrootin.c
+	```
+	
+	* S'evader du chroot
+	````
+	$ wget https://github.com/AbMaster/NetworkSecurityClass/raw/master/ESPRIT-4CINFO1-Mai-Juin-2015/Divers/chrootout.c
+	$ gcc -o chrootout chrootout.c
+	```
+
+2. Compte Administrateur Vs Compte Limité
+	
+	* 

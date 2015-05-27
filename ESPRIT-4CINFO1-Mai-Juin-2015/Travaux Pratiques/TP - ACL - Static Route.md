@@ -18,7 +18,7 @@ Access Control Lists .
 - GNS3
 
 ##### INSTRUCTIONS
-1. Fichier 'acl.gns3'
+1. Fichier 'acl2.gns3'
 	* PC1
 	````
 	PC1> ip 172.16.1.2/24 172.16.1.1
@@ -105,5 +105,18 @@ Access Control Lists .
 	router(config)# ip route 172.16.2.0 255.255.255.0 10.12.0.1
 	router(config)# exit
 	router# show ip route
+	router# copy running-config startup-config
+	```
+	
+	* ROUTER2 - ACCESS LIST
+	```
+	router(config)# access-list 1 permit 172.16.1.2
+	router(config)# access-list 1 deny 172.16.1.0 0.0.0.255
+	router(config)# access-list 1 permit 172.16.3.0 0.0.0.255
+	router# show ip access-lists
+	router# conf t
+	router(config)# interface Serial 1/0
+	Router(config-if)# ip access-group 1 in
+	Router(config-if)# end
 	router# copy running-config startup-config
 	```

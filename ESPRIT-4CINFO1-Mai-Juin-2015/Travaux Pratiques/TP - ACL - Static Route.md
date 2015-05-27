@@ -120,3 +120,17 @@ Access Control Lists .
 	Router(config-if)# end
 	router# copy running-config startup-config
 	```
+	
+	* ROUTER1 - ACCESS LIST ETENDU
+	```
+	router(config)# access-list 101 deny tcp host 172.16.2.2 host 172.16.1.2 eq 80
+	router(config)# access-list 101 deny udp 172.16.3.0 0.0.0.255 172.16.1.0 0.0.0.255
+	router(config)# access-list 101 deny ip 172.16.1.0 0.0.0.255 172.16.2.0 0.0.0.255
+	router(config)# access-list 101 permit ip any any
+	router# show ip access-lists
+	router# conf t
+	router(config)# interface Serial 1/0
+	Router(config-if)# ip access-group 101 in
+	Router(config-if)# end
+	router# copy running-config startup-config
+	```

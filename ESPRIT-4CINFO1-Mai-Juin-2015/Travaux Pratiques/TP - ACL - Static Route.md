@@ -60,7 +60,7 @@ Access Control Lists .
 	router(config)# interface Serial 1/1
 	Router(config-if)# ip address 10.12.0.1 255.255.0.0
 	Router(config-if)# no shutdown
-	Router(config-if)# end
+	Router(config-if)# exit
 	router(config)# ip route 172.16.2.0 255.255.255.0 10.11.0.2
 	router(config)# ip route 172.16.3.0 255.255.255.0 10.12.0.2
 	router(config)# exit
@@ -80,7 +80,7 @@ Access Control Lists .
 	router(config)# interface Serial 1/0
 	Router(config-if)# ip address 10.11.0.2 255.255.0.0
 	Router(config-if)# no shutdown
-	Router(config-if)# end
+	Router(config-if)# exit
 	router(config)# ip route 172.16.1.0 255.255.255.0 10.11.0.1
 	router(config)# ip route 172.16.3.0 255.255.255.0 10.11.0.1
 	router(config)# exit
@@ -100,7 +100,7 @@ Access Control Lists .
 	router(config)# interface Serial 1/0
 	Router(config-if)# ip address 10.12.0.2 255.255.0.0
 	Router(config-if)# no shutdown
-	Router(config-if)# end
+	Router(config-if)# exit
 	router(config)# ip route 172.16.1.0 255.255.255.0 10.12.0.1
 	router(config)# ip route 172.16.2.0 255.255.255.0 10.12.0.1
 	router(config)# exit

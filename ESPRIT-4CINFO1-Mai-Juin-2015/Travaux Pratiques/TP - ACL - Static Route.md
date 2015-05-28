@@ -125,6 +125,7 @@ Access Control Lists .
 	```
 	router(config)# access-list 101 deny icmp any host 172.16.1.3
 	router(config)# access-list 101 permit tcp 172.16.2.0 0.0.0.255 172.16.1.0 0.0.0.255 eq 80
+	router(config)# access-list 101 permit tcp 172.16.2.0 0.0.0.255 172.16.1.0 0.0.0.255 eq 23
 	router(config)# access-list 101 deny udp 172.16.2.0 0.0.0.255 172.16.1.0 0.0.0.255
 	router# show ip access-lists
 	router# conf t

@@ -17,7 +17,7 @@ Firewall .
 ##### OUTILS
 - IPTABLES
 - Berkley Packet Filter
-- Indian Firewall
+- ENDIAN Firewall
 
 ##### INSTRUCTIONS
 1. IPTABLES

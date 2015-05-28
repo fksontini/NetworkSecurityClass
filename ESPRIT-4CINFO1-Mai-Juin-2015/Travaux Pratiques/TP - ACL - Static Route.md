@@ -18,7 +18,7 @@ Access Control Lists .
 - GNS3
 
 ##### INSTRUCTIONS
-1. Fichier 'acl2.gns3'
+1. Fichier 'acl.png'
 	* PC1
 	````
 	PC1> ip 172.16.1.2/24 172.16.1.1
@@ -124,7 +124,7 @@ Access Control Lists .
 	* ROUTER1 - ACCESS LIST ETENDU
 	```
 	router(config)# access-list 101 deny icmp any host 172.16.1.3
-	router(config)# access-list 101 permit udp 172.16.2.0 0.0.0.255 172.16.1.0 0.0.0.255 eq 80
+	router(config)# access-list 101 permit tcp 172.16.2.0 0.0.0.255 172.16.1.0 0.0.0.255 eq 80
 	router(config)# access-list 101 deny udp 172.16.2.0 0.0.0.255 172.16.1.0 0.0.0.255
 	router# show ip access-lists
 	router# conf t
@@ -132,4 +132,23 @@ Access Control Lists .
 	Router(config-if)# ip access-group 101 in
 	Router(config-if)# end
 	router# copy running-config startup-config
+	```
+	
+	
+	* ROUTER3 - ACCESS LIST ETENDU
+	```
+	router(config)# ip access-list ?
+ 		extended        Extended Access List
+ 		log-update      Control access list log updates
+ 		logging         Control access list logging
+		resequence      Resequence Access List
+		standard        Standard Access List
+	router(config)# ip access-list extended test 
+	router(config-ext-nacl)#
+	router(config-ext-nacl)# 10 deny ip any host 172.16.1.2
+	router(config-ext-nacl)# exit
+	router(config)# exit
+	router# show ip access-list
+	Extended IP access list test
+    	10 deny ip any host 172.16.1.2
 	```

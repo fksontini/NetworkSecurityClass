@@ -121,6 +121,14 @@ Access Control Lists .
 	router# copy running-config startup-config
 	```
 	
+	* ROUTER2 - SUPPRIMER ACCESS LIST
+	```
+	router# conf t
+	router(config)# no access-list 1
+	router(config)# interface Serial 1/0
+	Router(config-if)# no ip access-group 1 in
+	```
+	
 	* ROUTER1 - ACCESS LIST ETENDU
 	```
 	router(config)# access-list 101 deny icmp any host 172.16.1.3

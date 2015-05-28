@@ -145,10 +145,10 @@ Access Control Lists .
 		standard        Standard Access List
 	router(config)# ip access-list extended test 
 	router(config-ext-nacl)#
-	router(config-ext-nacl)# 10 deny ip any host 172.16.1.2
+	router(config-ext-nacl)# 10 deny ip any host 172.16.3.2
 	router(config-ext-nacl)# exit
 	router(config)# exit
 	router# show ip access-list
 	Extended IP access list test
-    	10 deny ip any host 172.16.1.2
+    	10 deny ip any host 172.16.3.2
 	```

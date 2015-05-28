@@ -123,10 +123,9 @@ Access Control Lists .
 	
 	* ROUTER1 - ACCESS LIST ETENDU
 	```
-	router(config)# access-list 101 deny tcp host 172.16.2.2 host 172.16.1.2 eq 80
-	router(config)# access-list 101 deny udp 172.16.3.0 0.0.0.255 172.16.1.0 0.0.0.255
-	router(config)# access-list 101 deny ip 172.16.1.0 0.0.0.255 172.16.2.0 0.0.0.255
-	router(config)# access-list 101 permit ip any any
+	router(config)# access-list 101 deny icmp any host 172.16.1.3
+	router(config)# access-list 101 permit udp 172.16.2.0 0.0.0.255 172.16.1.0 0.0.0.255 eq 80
+	router(config)# access-list 101 deny udp 172.16.2.0 0.0.0.255 172.16.1.0 0.0.0.255
 	router# show ip access-lists
 	router# conf t
 	router(config)# interface Serial 1/0

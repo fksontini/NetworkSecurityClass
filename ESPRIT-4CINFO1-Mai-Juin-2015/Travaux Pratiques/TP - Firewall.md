@@ -18,6 +18,7 @@ Firewall .
 - IPTABLES
 - Berkley Packet Filter
 - ENDIAN Firewall
+- Palo Alto
 
 ##### INSTRUCTIONS
 1. IPTABLES
@@ -48,15 +49,15 @@ Firewall .
 	# iptables -I INPUT 1 -i lo -j ACCEPT
 	```
 	
-	* Autoriser les connections vers notre serveur web et notre serveur ssh
+	* Autoriser des connections vers des ports données
 	````
-	# iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-	# iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+	# iptables -A INPUT -p tcp --dport 523 -j ACCEPT
+	# iptables -A INPUT -p tcp --dport 253 -j ACCEPT
 	```
 	
 	* Bloquer une IP ou un plage d'IP
 	````
 	# iptables -A INPUT -s 192.168.10.210 -j DROP
-	# iptables -A INPUT -i eth0 -p tcp -s 192.168.10.0/24 --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
-	# iptables -A INPUT -s 192.168.10.210 -p tcp --destination-port 25 -j DROP
+	# iptables -A INPUT -i eth0 -p tcp -s 192.168.10.0/24 --dport 523 -m state --state NEW,ESTABLISHED -j ACCEPT
+	# iptables -A INPUT -s 192.168.10.210 -p tcp --destination-port 140 -j DROP
 	```

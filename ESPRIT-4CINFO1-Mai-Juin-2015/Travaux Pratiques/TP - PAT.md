@@ -1,7 +1,7 @@
-### Travaux Pratique - NAT Statique
+### Travaux Pratique - PAT
 
 ###### DESCRIPTION:
-Network Address Translation (Statique).
+PORT Address Translation.
 
 > ###### AUTEUR:
 > > **Abdessabour Arous**.
@@ -18,22 +18,22 @@ Network Address Translation (Statique).
 - GNS3
 
 ##### INSTRUCTIONS
-1. Fichier 'nat statique.png'
+1. Fichier 'pat.png'
 	* PC1
 	````
-	PC1> ip 192.168.20.2/24 192.168.20.1
+	PC1> ip 192.168.40.2/24 192.168.40.1
 	PC1> save
 	```
 	
 	* PC2
 	````
-	PC2> ip 192.168.20.3/24 192.168.20.1
+	PC2> ip 192.168.40.3/24 192.168.40.1
 	PC2> save
 	```
 	
 	* PC3
 	````
-	PC3> ip 192.168.20.2/24 192.168.20.1
+	PC3> ip 192.168.40.4/24 192.168.40.1
 	PC3> save
 	```
 	
@@ -42,14 +42,14 @@ Network Address Translation (Statique).
 	router> en
 	router# conf t
 	router(config)# interface FastEthernet 0/0
-	Router(config-if)# ip address 192.168.20.1 255.255.255.0
+	Router(config-if)# ip address 192.168.40.1 255.255.255.0
 	Router(config-if)# no shutdown
 	Router(config-if)# exit
-	router(config)# interface Serial 2/0
-	Router(config-if)# ip address 196.65.22.1 255.255.255.0
+	router(config)# interface Serial 1/0
+	Router(config-if)# ip address 191.54.17.1 255.255.255.0
 	Router(config-if)# no shutdown
 	Router(config-if)# exit
-	router(config)# ip route 0.0.0.0 0.0.0.0 196.65.22.2
+	router(config)# ip route 0.0.0.0 0.0.0.0 191.54.17.2
 	router(config)# exit
 	router# copy running-config startup-config
 	```
@@ -59,7 +59,7 @@ Network Address Translation (Statique).
 	router> en
 	router# conf t
 	router(config)# interface Serial 1/0
-	Router(config-if)# ip address 196.65.22.2 255.255.255.0
+	Router(config-if)# ip address 191.54.17.2 255.255.255.0
 	Router(config-if)# no shutdown
 	Router(config-if)# exit
 	router# copy running-config startup-config
@@ -72,10 +72,11 @@ Network Address Translation (Statique).
 	router(config)# interface FastEthernet 0/0
 	Router(config-if)# ip nat inside
 	Router(config-if)# exit
-	router(config)# interface Serial 2/0
+	router(config)# interface Serial 1/0
 	Router(config-if)# ip nat outside
 	Router(config-if)# exit
-	router(config)# ip nat inside source static 192.168.20.2 196.65.22.50
+	router(config)# access-list 1 permit 192.168.40.0 0.0.0.255
+	router(config)# ip nat inside source list 1 interface serial 1/0 overload 
 	router(config)# exit
 	router# copy running-config startup-config
 	```

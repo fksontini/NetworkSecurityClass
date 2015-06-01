@@ -33,7 +33,7 @@ Network Address Translation (Statique).
 	
 	* PC3
 	````
-	PC3> ip 192.168.20.2/24 192.168.20.1
+	PC3> ip 192.168.20.4/24 192.168.20.1
 	PC3> save
 	```
 	

@@ -75,7 +75,7 @@ Network Address Translation (Dynamique).
 	router(config)# interface Serial 1/0
 	Router(config-if)# ip nat outside
 	Router(config-if)# exit
-	router(config)# ip nat pool mypool 196.95.31.17 196.95.31.30 prefix-length 28
+	router(config)# ip nat pool mypool 196.73.31.17 196.73.31.30 prefix-length 28
 	router(config)# access-list 1 permit 192.168.30.0 0.0.0.255
 	router(config)# ip nat inside source list 1 pool mypool 
 	router(config)# exit

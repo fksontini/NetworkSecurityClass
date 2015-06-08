@@ -31,18 +31,6 @@ PSITE TO SITE VPN.
 	PC2> save
 	```
 	
-	* PC3
-	````
-	PC3> ip 192.168.70.2/24 192.168.70.1
-	PC3> save
-	```
-	
-	* PC4
-	````
-	PC3> ip 192.168.70.2/24 192.168.70.1
-	PC3> save
-	```
-	
 	* ROUTER1
 	````
 	router> en

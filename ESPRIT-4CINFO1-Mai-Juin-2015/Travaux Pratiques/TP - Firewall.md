@@ -58,6 +58,6 @@ Firewall .
 	* Bloquer une IP ou un plage d'IP
 	````
 	# iptables -A INPUT -s 192.168.10.210 -j DROP
-	# iptables -A INPUT -i eth0 -p tcp -s 192.168.10.0/24 --dport 523 -m state --state NEW,ESTABLISHED -j ACCEPT
+	# iptables -A INPUT -i eth0 -p tcp -s 192.168.10.0/24 --dport 523 -j ACCEPT
 	# iptables -A INPUT -s 192.168.10.210 -p tcp --destination-port 140 -j DROP
 	```
